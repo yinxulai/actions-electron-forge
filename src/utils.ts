@@ -41,10 +41,13 @@ export function setEnv(name: string, value: string) {
 
 type InputName = 'github_token' | 'package_root' | 'script_name'
 
+export function getInput(name: InputName, required: true): string
+export function getInput(name: InputName, required: false): string | null
 export function getInput(name: InputName, required: boolean): string | null {
   const value = getEnv(`INPUT_${name}`)
   if (required && !value) {
     exit(`"${name}" input variable is not defined`);
   }
+
   return value;
 }
