@@ -6,8 +6,10 @@
   "directories": {
     "lib": "lib"
   },
-
-  "dependencies": {},
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/exec": "^1.0.3"
+  },
   "devDependencies": {
     "@types/node": "^13.9.2"
   },
