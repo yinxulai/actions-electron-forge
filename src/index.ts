@@ -21,7 +21,6 @@ async function action() {
   if (useNpm) {
     core.info(`Will run NPM commands in directory '${pkgRoot}'`)
     exec.exec('npm', ['install'], { cwd: pkgRoot })
-    exec.exec('npm', ['run', 'make'], { cwd: pkgRoot })
     if (release) {
       await exec.exec('npm', ['run', 'publish'], {
         cwd: pkgRoot,
@@ -35,7 +34,6 @@ async function action() {
   if (useYarn) {
     core.info(`Will run Yarn commands in directory '${pkgRoot}'`)
     exec.exec('yarn', ['install'], { cwd: pkgRoot })
-    exec.exec('yarn', ['run', 'make'], { cwd: pkgRoot })
     if (release) {
       await exec.exec('yarn', ['run', 'publish'], {
         cwd: pkgRoot,
