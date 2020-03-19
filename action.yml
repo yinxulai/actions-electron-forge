@@ -1,0 +1,23 @@
+name: Electron Forge Action
+author: Alain
+description: GitHub Action for building and releasing Electron apps
+
+inputs:
+  github_token:
+    description: GitHub authentication token
+    required: true
+  package_root:
+    description: Directory where NPM/Yarn commands should be run
+    required: false
+    default: "."
+  script_name:
+    description: Optional package.json scripts name
+    required: false
+    default: "publish"
+runs:
+  using: node12
+  main: lib/index.js
+
+branding:
+  icon: upload-cloud
+  color: blue
